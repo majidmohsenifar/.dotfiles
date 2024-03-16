@@ -240,7 +240,7 @@ exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/google-chrome-stable'
 exec --no-startup-id i3-msg 'workspace 3; exec kitty'
 
 
-bindsym $mod+shift+x exec betterlockscreen -l dim -u /home/majid/Pictures/bubble.png
+bindsym $mod+shift+x exec betterlockscreen -l dim -u /home/majid/Pictures/arch.png
 
 
 # ignore urgent and focus
@@ -257,3 +257,12 @@ bindsym $mod+Print exec gnome-screenshot -a
 # lang and keyboard layout
 exec_always "setxkbmap -model pc105 -layout us,ir -variant ,, -option grp:win_space_toggle"
 
+
+# default workspace layout
+workspace_layout tabbed
+
+#background
+exec_always feh --bg-scale /home/majid/Pictures/arch.png
+exec_always xset -dpms  
+exec_always xset s off
+exec_always xset s noblank 
