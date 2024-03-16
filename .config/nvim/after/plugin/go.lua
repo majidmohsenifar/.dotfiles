@@ -1,5 +1,7 @@
 require('go').setup({
-    textobjects = false
+    textobjects = false,
+    tag_transform = "camelcase",
+    tag_options = 'json=',
 })
 
 
