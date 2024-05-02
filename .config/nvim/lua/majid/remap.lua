@@ -34,6 +34,7 @@ nmap('<C-p>',':cprevious<CR>')
 --imap("<C-space>","<C-x><C-o>")
 --imap("<C-p>","<C-x><C-o>")
 nmap('<leader>fs',':GoFillStruct<CR>')
+
 --nmap('gr',':GoReferrers<CR>')
 
 -- go to definition

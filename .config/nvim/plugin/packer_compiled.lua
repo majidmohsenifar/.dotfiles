@@ -186,6 +186,11 @@ _G.packer_plugins = {
     path = "/home/majid/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-nio"] = {
+    loaded = true,
+    path = "/home/majid/.local/share/nvim/site/pack/packer/start/nvim-nio",
+    url = "https://github.com/nvim-neotest/nvim-nio"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/majid/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -252,8 +257,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType rust ++once lua require("packer.load")({'rust.vim', 'rustaceanvim'}, { ft = "rust" }, _G.packer_plugins)]]
 vim.cmd [[au FileType go ++once lua require("packer.load")({'molokai'}, { ft = "go" }, _G.packer_plugins)]]
-vim.cmd [[au FileType rust ++once lua require("packer.load")({'rustaceanvim', 'rust.vim'}, { ft = "rust" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]

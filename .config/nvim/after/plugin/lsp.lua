@@ -5,8 +5,9 @@ require('lspconfig').gopls.setup({
     gopls = {
       experimentalPostfixCompletions = true,
       analyses = {
-	unusedparams = true,
-	shadow = true,
+	        unusedparams = true,
+	        shadow = true,
+            fillstruct = true,
       },
       staticcheck = true,
     },
