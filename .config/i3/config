@@ -233,9 +233,9 @@ exec --no-startup-id pasystray
 
 
 # default app
-assign [title="Discord"] 1
+#assign [title="Discord"] 1
 assign [title="Google Chrome"] 2
-exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/discord'
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/nekoray'
 exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/google-chrome-stable'
 exec --no-startup-id i3-msg 'workspace 3; exec kitty'
 
@@ -261,8 +261,8 @@ exec_always "setxkbmap -model pc105 -layout us,ir -variant ,, -option grp:win_sp
 # default workspace layout
 workspace_layout tabbed
 
-#background
-exec_always feh --bg-scale /home/majid/Pictures/arch.png
 exec_always xset -dpms  
 exec_always xset s off
 exec_always xset s noblank 
+#background
+exec_always feh --bg-scale /home/majid/Pictures/arch.png
