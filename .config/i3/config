@@ -233,7 +233,7 @@ exec --no-startup-id pasystray
 
 
 # default app
-#assign [title="Discord"] 1
+assign [title="NekoBox"] 1
 assign [title="Google Chrome"] 2
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/nekoray'
 exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/google-chrome-stable'

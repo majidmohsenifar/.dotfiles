@@ -31,6 +31,8 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export CARGO_NET_GIT_FETCH_WITH_CLI=true
 export BROWSER=/usr/bin/firefox
 export PATH=$PATH:$HOME/.cargo/bin
+export PATH="/home/majid/.local/share/solana/install/active_release/bin:$PATH"
+export PATH="/home/majid/.avm/bin:$PATH"
 
 
 
@@ -52,9 +54,10 @@ alias cdr="cd ~/rust"
 
 ulimit -n 90000
 
-[ -s "/home/majid/.scm_breeze/scm_breeze.sh" ] && source "/home/majid/.scm_breeze/scm_breeze.sh"
 export FZF_DEFAULT_COMMAND="find -L"
 
 # make sure the --git-dir is the same as the
 # directory where you created the repo above.
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+
+[ -s "/home/majid/.scm_breeze/scm_breeze.sh" ] && source "/home/majid/.scm_breeze/scm_breeze.sh"
