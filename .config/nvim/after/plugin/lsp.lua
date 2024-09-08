@@ -17,7 +17,15 @@ require('lspconfig').gopls.setup({
   }
 })
 
-require 'lspconfig'.gopls.setup {}
+--require 'lspconfig'.gopls.setup {}
+
+require'lspconfig'.tsserver.setup {}
+
+
+if vim.lsp.inlay_hint then
+  vim.lsp.inlay_hint.enable(true, { 0 })
+end
+
 
 
 -- LSP Diagnostics Options Setup 
