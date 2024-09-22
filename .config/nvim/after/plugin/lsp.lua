@@ -19,7 +19,7 @@ require('lspconfig').gopls.setup({
 
 --require 'lspconfig'.gopls.setup {}
 
-require'lspconfig'.tsserver.setup {}
+require'lspconfig'.ts_ls.setup {}
 
 
 if vim.lsp.inlay_hint then
