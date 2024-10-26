@@ -2,3 +2,6 @@
 program = "/usr/bin/fish"
 args = ["-l","-c","tmux attach || tmux"]
 
+
+[env]
+TERM = "alacritty-direct"

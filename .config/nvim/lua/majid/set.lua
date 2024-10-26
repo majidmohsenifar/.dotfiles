@@ -41,4 +41,5 @@ vim.cmd('au BufRead * normal zR')
 
 vim.g.rehash256 = true
 vim.g.molokai_original = true
+vim.g.termguicolors = true
 vim.cmd('colorscheme molokai') 

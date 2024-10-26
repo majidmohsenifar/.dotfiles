@@ -25,7 +25,12 @@ return require('packer').startup(function()
 
 
   -- Rust
-  use {'mrcjkb/rustaceanvim', version='^4', ft = 'rust'}
+  use {
+      'mrcjkb/rustaceanvim',
+      version='^5',
+      lazy = false, -- This plugin is already lazy
+      ft = 'rust',
+  }
   --use 'simrat39/rust-tools.nvim'
   use 'simrat39/inlay-hints.nvim'
   use {'rust-lang/rust.vim', ft = 'rust'}

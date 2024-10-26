@@ -47,7 +47,7 @@ nmap('1gD',':lua vim.lsp.buf.type_definition()<CR>')
 nmap('gr',':lua vim.lsp.buf.references()<CR>')
 nmap('g0',':lua vim.lsp.buf.document_symbol()<CR>')
 nmap('gW',':lua vim.lsp.buf.workspace_symbol()<CR>')
-nmap('ga',':lua vim.lsp.buf.code_action()<CR>')
+--nmap('ga',':lua vim.lsp.buf.code_action()<CR>')
 
 
 
@@ -59,3 +59,11 @@ nmap('<S-l>','<S-l>zz')
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+
+
+-- for rust
+-- 
+--nmap('<leader>fs',":lua vim.cmd.RustLsp('codeAction')<CR>")
+
+nmap("ga", "<cmd>RustLsp codeAction<cr>", { desc = "Rust code action", silent = true, noremap = true })
+
