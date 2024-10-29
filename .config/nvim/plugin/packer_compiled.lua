@@ -129,11 +129,6 @@ _G.packer_plugins = {
     path = "/home/majid/.local/share/nvim/site/pack/packer/start/go.nvim",
     url = "https://github.com/ray-x/go.nvim"
   },
-  ["inlay-hints.nvim"] = {
-    loaded = true,
-    path = "/home/majid/.local/share/nvim/site/pack/packer/start/inlay-hints.nvim",
-    url = "https://github.com/simrat39/inlay-hints.nvim"
-  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/majid/.local/share/nvim/site/pack/packer/start/lualine.nvim",

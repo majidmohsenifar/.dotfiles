@@ -3,6 +3,7 @@ require('lspconfig').gopls.setup({
   on_attach = on_attach,
   settings = {
     gopls = {
+      buildFlags =  {"-tags=wireinject"},
       experimentalPostfixCompletions = true,
       analyses = {
 	        unusedparams = true,
@@ -17,7 +18,6 @@ require('lspconfig').gopls.setup({
   }
 })
 
---require 'lspconfig'.gopls.setup {}
 
 require'lspconfig'.ts_ls.setup {}
 
