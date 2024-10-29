@@ -1,21 +1,22 @@
 require('lspconfig').gopls.setup({
 	cmd = {'gopls'},
-  on_attach = on_attach,
-  settings = {
-    gopls = {
-      buildFlags =  {"-tags=wireinject"},
-      experimentalPostfixCompletions = true,
-      analyses = {
-	        unusedparams = true,
-	        shadow = true,
-            fillstruct = true,
-      },
-      staticcheck = true,
+    filetypes = { "go", "gomod" },
+    on_attach = on_attach,
+    settings = {
+        gopls = {
+            buildFlags = { "-tags", "wireinject" },
+            experimentalPostfixCompletions = true,
+            analyses = {
+	            unusedparams = true,
+	            shadow = true,
+                fillstruct = true,
+            },
+        staticcheck = true,
+        },
     },
-  },
-  init_options = {
-    usePlaceholders = true,
-  }
+    init_options = {
+        usePlaceholders = true,
+    }
 })
 
 
