@@ -87,6 +87,16 @@ return require('packer').startup(function()
   -- splitting/joining blocks of code 
   use{'Wansmer/treesj'}
 
+  use({
+	"L3MON4D3/LuaSnip",
+	-- follow latest release.
+	tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+	-- install jsregexp (optional!:).
+	run = "make install_jsregexp"
+  })
+
+  use "rafamadriz/friendly-snippets"
+
   if packer_bootstrap then
         require('packer').sync()
     end
