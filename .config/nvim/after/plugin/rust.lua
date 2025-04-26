@@ -19,7 +19,10 @@ vim.g.rustaceanvim = {
         checkOnSave = {
           command = "clippy",
         },
-
+        cargo = {
+         allFeatures = true,
+         unstableFeatures = true,
+        },
         diagnostics = {
               enable = true,
               disabled = {"unresolved-proc-macro"},
@@ -37,3 +40,24 @@ vim.g.rustaceanvim = {
 vim.g.rustfmt_autosave = 0
 --vim.g.rustfmt_emit_files = 1
 --vim.g.rustfmt_fail_silently = 0
+--
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.rs",
+  callback = function()
+    if vim.fn.findfile("Cargo.toml", ".;") == "" then return end
+
+    -- Save view state
+    local view = vim.fn.winsaveview()
+
+    -- Run `cargo fmt` async and restore view afterward
+    vim.fn.jobstart({ "cargo", "fmt" }, {
+      stdout_buffered = true,
+      on_exit = function()
+        vim.schedule(function()
+          vim.cmd("silent! e!")
+          vim.fn.winrestview(view)  -- Restore scroll/cursor
+        end)
+      end,
+    })
+  end,
+})
