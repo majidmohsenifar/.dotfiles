@@ -10,6 +10,10 @@ end
 function imap(shortcut, command)
   map('i', shortcut, command)
 end
+
+function vmap(shortcut, command)
+  map('v', shortcut, command)
+end
 -- key-mapping -----------------------------------------
 nmap('<leader>ff',':Files<CR>')
 --nmap('<leader>fg',':Rg <C-R><C-W><CR>')
@@ -20,7 +24,7 @@ nmap('<leader>fl',':Lines <C-R><C-W><CR>')
 nmap('<leader>w','<C-w>w<CR>')
 
 -- "rename variable in module level with all its refrences
-nmap('<leader>r',':GoRename<CR>')
+nmap('<leader>r', ':lua vim.lsp.buf.rename()<CR>')
 
 -- go to next or previous error in errorFix list
 nmap('<C-n>',':cn<CR>')
@@ -66,6 +70,3 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 --nmap('<leader>fs',":lua vim.cmd.RustLsp('codeAction')<CR>")
 
 nmap("ga", "<cmd>RustLsp codeAction<cr>", { desc = "Rust code action", silent = true, noremap = true })
-
--- for commenting
-nmap("<leader>c<Space>", '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', { })

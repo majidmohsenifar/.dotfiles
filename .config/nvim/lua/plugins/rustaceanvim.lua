@@ -46,24 +46,14 @@ return {
 
       -- Optional: Disable rustfmt_autosave if you prefer manual formatting
       vim.g.rustfmt_autosave = 0
-
-      -- Optional: run `cargo fmt` on save
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = "*.rs",
-        callback = function()
-          if vim.fn.findfile("Cargo.toml", ".;") == "" then return end
-          local view = vim.fn.winsaveview()
-          vim.fn.jobstart({ "cargo", "fmt" }, {
-            stdout_buffered = true,
-            on_exit = function()
-              vim.schedule(function()
-                vim.cmd("silent! e!")
-                vim.fn.winrestview(view)
-              end)
-            end,
-          })
-        end,
-      })
+        vim.api.nvim_create_autocmd("BufWritePost", {
+          pattern = "*.rs",
+          callback = function()
+            vim.cmd("silent !cargo fmt")
+            -- Optional: reload the buffer to see changes
+            vim.cmd("edit")
+          end,
+        })
     end,
   },
 }
