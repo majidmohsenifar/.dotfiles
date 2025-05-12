@@ -24,7 +24,7 @@ nmap('<leader>fl',':Lines <C-R><C-W><CR>')
 nmap('<leader>w','<C-w>w<CR>')
 
 -- "rename variable in module level with all its refrences
-nmap('<leader>r', ':lua vim.lsp.buf.rename()<CR>')
+-- nmap('<leader>r', ':lua vim.lsp.buf.rename()<CR>')
 
 -- go to next or previous error in errorFix list
 nmap('<C-n>',':cn<CR>')

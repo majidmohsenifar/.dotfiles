@@ -1,7 +1,7 @@
 return {
   {
     "mrcjkb/rustaceanvim",
-    version = "^5", -- Use latest stable version
+    version = "^6", -- Use latest stable version
     ft = { "rust" },
     config = function()
       vim.g.rustaceanvim = {
@@ -12,7 +12,7 @@ return {
             vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
             vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-            vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+            vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
 
            require("inlay-hints").on_attach(client, bufnr)
           end,
