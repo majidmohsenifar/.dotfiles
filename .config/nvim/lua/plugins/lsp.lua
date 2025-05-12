@@ -5,7 +5,6 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
 
-
         local sign = function(opts)
           vim.fn.sign_define(opts.name, {
             texthl = opts.name,
@@ -48,6 +47,7 @@ return {
         cmd = { "gopls" },
         filetypes = { "go", "gomod" },
         on_attach = on_attach,
+        capabilities = require('blink.cmp').get_lsp_capabilities(),
         settings = {
           gopls = {
             buildFlags = { "-tags", "wireinject" },

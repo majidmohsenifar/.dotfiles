@@ -16,6 +16,7 @@ return {
 
            require("inlay-hints").on_attach(client, bufnr)
           end,
+           capabilities = require('blink.cmp').get_lsp_capabilities(),
           default_settings = {
             ["rust-analyzer"] = {
               checkOnSave = {
