@@ -61,3 +61,5 @@ export FZF_DEFAULT_COMMAND="find -L"
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
 [ -s "/home/majid/.scm_breeze/scm_breeze.sh" ] && source "/home/majid/.scm_breeze/scm_breeze.sh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
