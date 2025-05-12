@@ -1,4 +1,4 @@
-vim.g.mapleader = ';'
+--vim.g.mapleader = ';'
 
 vim.o.mouse = ''
 vim.opt.swapfile = false

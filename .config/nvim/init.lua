@@ -1,1 +1,2 @@
-require("majid")
+require("config.lazy")
+require("core")

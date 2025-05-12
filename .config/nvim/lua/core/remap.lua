@@ -67,3 +67,5 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 nmap("ga", "<cmd>RustLsp codeAction<cr>", { desc = "Rust code action", silent = true, noremap = true })
 
+-- for commenting
+nmap("<leader>c<Space>", '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', { })
