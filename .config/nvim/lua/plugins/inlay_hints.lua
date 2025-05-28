@@ -20,5 +20,5 @@ return {
       },
     })
   end,
-  event = "LspAttach", -- Optional: Load on LSP attach
+  -- event = "LspAttach", -- Optional: Load on LSP attach
 }

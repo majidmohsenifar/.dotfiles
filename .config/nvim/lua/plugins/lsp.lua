@@ -35,18 +35,18 @@ return {
       })
 
       -- Optional: Define on_attach if needed
-      local on_attach = function(client, bufnr)
-        -- Example: Inlay hints for Neovim 0.10+
-        if vim.lsp.inlay_hint then
-          vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-        end
-      end
+      -- local on_attach = function(client, bufnr)
+      --   -- Example: Inlay hints for Neovim 0.10+
+      --   if vim.lsp.inlay_hint then
+      --     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+      --   end
+      -- end
 
       -- gopls setup
       lspconfig.gopls.setup({
         cmd = { "gopls" },
         filetypes = { "go", "gomod" },
-        on_attach = on_attach,
+        -- on_attach = on_attach,
         capabilities = require('blink.cmp').get_lsp_capabilities(),
         settings = {
           gopls = {

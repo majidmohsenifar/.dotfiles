@@ -10,6 +10,7 @@ return {
           ["-"] = "actions.parent",
           ["<CR>"] = "actions.select",
           ["_"] = "actions.close",
+          ["<C-l>"] = "actions.refresh",
         },
         use_default_keymaps = false,
         view_options = {

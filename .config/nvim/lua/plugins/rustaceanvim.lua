@@ -2,6 +2,7 @@ return {
   {
     "mrcjkb/rustaceanvim",
     version = "^6", -- Use latest stable version
+    lazy = false,
     ft = { "rust" },
     config = function()
       vim.g.rustaceanvim = {
@@ -35,11 +36,9 @@ return {
               inlayHints = {
                 auto = true,
                 only_current_line = false,
-                -- enable = true,
                 typeHints = true,
                 parameterHints = true,
                 chainingHints = true,
-                -- maxLength = 80,  -- Adjust maximum length for hints (this can help prevent wrapping issues)
              },
             },
           },
