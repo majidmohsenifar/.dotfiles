@@ -19,9 +19,10 @@ return {
            capabilities = require('blink.cmp').get_lsp_capabilities(),
           default_settings = {
             ["rust-analyzer"] = {
-              checkOnSave = {
-                command = "clippy",
-              },
+              -- checkOnSave = {
+              --   command = "clippy",
+              -- },
+              checkOnSave = true,
               cargo = {
                 allFeatures = true,
                 unstableFeatures = true,
