@@ -7,6 +7,7 @@ return {
     config = function()
       vim.g.rustaceanvim = {
         server = {
+          cmd = { "/usr/bin/rust-analyzer" },  -- Explicit path
           on_attach = function(client, bufnr)
             -- Set your keymaps here if needed
             local opts = { buffer = bufnr }
@@ -20,9 +21,9 @@ return {
            capabilities = require('blink.cmp').get_lsp_capabilities(),
           default_settings = {
             ["rust-analyzer"] = {
-              -- checkOnSave = {
-              --   command = "clippy",
-              -- },
+              check = {
+                command = "clippy",
+              },
               checkOnSave = true,
               cargo = {
                 allFeatures = true,
@@ -51,8 +52,6 @@ return {
           pattern = "*.rs",
           callback = function()
             vim.cmd("silent !cargo fmt")
-            -- Optional: reload the buffer to see changes
-            vim.cmd("edit")
           end,
         })
     end,
