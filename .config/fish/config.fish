@@ -17,7 +17,6 @@ alias cdcc="cd ~/go/src/connector-client-service"
 alias cdci="cd ~/go/src/connector-invoice-service"
 alias k=kubectl
 alias nv=nvim 
-alias cc=/home/majid/concordium-client_4.0.4-0
 alias cat=bat
 alias cdc="cd ~/go/src/corepass-auth-service"
 alias cdr="cd ~/rust"

@@ -65,17 +65,25 @@ return {
         },
       })
 
-      -- TypeScript LSP (tsserver)
-      -- lspconfig.tsserver.setup({
-      --   on_attach = on_attach,
-      -- })
-
     lspconfig.tsserver.setup{
   -- Or use `tsserver = require('typescript-tools')` depending on your plugin setup
       name = "tsserver",
     cmd = { "typescript-language-server", "--stdio" },
   -- your settings here
     }
+
+    lspconfig.clangd.setup({
+        cmd = { "clangd" },
+        filetypes = { "c", "cpp" },  -- Supports both C and C++
+        capabilities = capabilities,
+        on_attach = on_attach,  -- Optional: Reuse shared on_attach
+        -- clangd-specific settings (optional)
+        settings = {
+          clangd = {
+            fallbackFlags = { "-std=c17" },  -- Default C standard
+          },
+        },
+      })
     end,
   },
 }
