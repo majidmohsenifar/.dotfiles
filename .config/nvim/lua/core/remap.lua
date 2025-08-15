@@ -70,3 +70,20 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 --nmap('<leader>fs',":lua vim.cmd.RustLsp('codeAction')<CR>")
 
 nmap("ga", "<cmd>RustLsp codeAction<cr>", { desc = "Rust code action", silent = true, noremap = true })
+
+vim.api.nvim_create_user_command(
+  'Diag',
+  function()
+    vim.diagnostic.setqflist()
+    vim.cmd('copen')
+  end,
+  {}
+)
+
+-- Close diagnostics float when leaving the buffer
+vim.api.nvim_create_autocmd("BufLeave", {
+  callback = function()
+    vim.diagnostic.hide(nil, 0) -- hide diagnostics for the current buffer
+    vim.cmd("pclose") -- also close floating preview windows if any
+  end,
+})

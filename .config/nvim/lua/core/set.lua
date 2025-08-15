@@ -39,7 +39,7 @@ vim.cmd('highlight LineNr ctermfg=gray')
 vim.cmd('au BufRead * normal zR')
 
 
-vim.g.rehash256 = true
-vim.g.molokai_original = true
 vim.g.termguicolors = true
-vim.cmd('colorscheme molokai') 
+-- vim.g.rehash256 = true
+-- vim.g.molokai_original = true
+-- vim.cmd('colorscheme molokai') 
