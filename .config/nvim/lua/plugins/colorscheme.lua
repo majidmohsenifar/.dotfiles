@@ -1,11 +1,11 @@
 return {
   {
-    "Lokaltog/vim-monotone",
-    name = "monotone",
+    -- "Lokaltog/vim-monotone",
+    "slugbyte/lackluster.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd("colorscheme monotone")
+      vim.cmd("colorscheme lackluster")
     end,
   },
 }
