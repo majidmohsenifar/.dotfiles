@@ -18,8 +18,7 @@ end
 nmap('<leader>ff',':Files<CR>')
 nmap('<leader>fg',':Rg<CR>')
 nmap('<leader>fb',':Buffers<CR>')
-nmap('<leader>fl',':Lines <C-R><C-W><CR>')
-nmap('<leader>w','<C-w>w<CR>')
+nmap('<leader>gs',':Rg <C-R><C-W><CR>')
 
 
 -- go to next or previous error in errorFix list
@@ -54,6 +53,7 @@ nmap('<S-l>','<S-l>zz')
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+
 
 
 
