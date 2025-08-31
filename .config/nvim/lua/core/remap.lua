@@ -16,15 +16,11 @@ function vmap(shortcut, command)
 end
 -- key-mapping -----------------------------------------
 nmap('<leader>ff',':Files<CR>')
---nmap('<leader>fg',':Rg <C-R><C-W><CR>')
 nmap('<leader>fg',':Rg<CR>')
 nmap('<leader>fb',':Buffers<CR>')
 nmap('<leader>fl',':Lines <C-R><C-W><CR>')
-
 nmap('<leader>w','<C-w>w<CR>')
 
--- "rename variable in module level with all its refrences
--- nmap('<leader>r', ':lua vim.lsp.buf.rename()<CR>')
 
 -- go to next or previous error in errorFix list
 nmap('<C-n>',':cn<CR>')
@@ -34,12 +30,8 @@ nmap('<C-p>',':cp<CR>')
 nmap('<C-n>',':cnext<CR>')
 nmap('<C-p>',':cprevious<CR>')
 
--- "completion with ctrl space
---imap("<C-space>","<C-x><C-o>")
---imap("<C-p>","<C-x><C-o>")
 nmap('<leader>fs',':GoFillStruct<CR>')
 
---nmap('gr',':GoReferrers<CR>')
 
 -- go to definition
 -- Code navigation shortcuts
@@ -51,7 +43,6 @@ nmap('1gD',':lua vim.lsp.buf.type_definition()<CR>')
 nmap('gr',':lua vim.lsp.buf.references()<CR>')
 nmap('g0',':lua vim.lsp.buf.document_symbol()<CR>')
 nmap('gW',':lua vim.lsp.buf.workspace_symbol()<CR>')
---nmap('ga',':lua vim.lsp.buf.code_action()<CR>')
 
 
 
@@ -65,9 +56,6 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 
--- for rust
--- 
---nmap('<leader>fs',":lua vim.cmd.RustLsp('codeAction')<CR>")
 
 nmap("ga", "<cmd>RustLsp codeAction<cr>", { desc = "Rust code action", silent = true, noremap = true })
 
@@ -79,11 +67,3 @@ vim.api.nvim_create_user_command(
   end,
   {}
 )
-
--- Close diagnostics float when leaving the buffer
-vim.api.nvim_create_autocmd("BufLeave", {
-  callback = function()
-    vim.diagnostic.hide(nil, 0) -- hide diagnostics for the current buffer
-    vim.cmd("pclose") -- also close floating preview windows if any
-  end,
-})

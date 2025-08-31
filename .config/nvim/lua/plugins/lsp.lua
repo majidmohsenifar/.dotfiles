@@ -14,6 +14,15 @@ return {
         end
 
         vim.diagnostic.config({
+            virtual_text = {
+              prefix = '●',
+              spacing = 4,
+              delay = 200, -- delay in ms before showing virtual text
+            },
+            --signs = true,
+            underline = true,
+            update_in_insert = false,
+
           signs = {
             text = {
               [vim.diagnostic.severity.ERROR] = "E",
@@ -26,21 +35,6 @@ return {
 
       -- Enable sign column
       vim.cmd("set signcolumn=yes")
-
-      -- Show diagnostics in float on CursorHold
-      vim.api.nvim_create_autocmd("CursorHold", {
-        callback = function()
-          vim.diagnostic.open_float(nil, { focusable = false })
-        end,
-      })
-
-      -- Optional: Define on_attach if needed
-      -- local on_attach = function(client, bufnr)
-      --   -- Example: Inlay hints for Neovim 0.10+
-      --   if vim.lsp.inlay_hint then
-      --     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-      --   end
-      -- end
 
       -- gopls setup
       lspconfig.gopls.setup({
