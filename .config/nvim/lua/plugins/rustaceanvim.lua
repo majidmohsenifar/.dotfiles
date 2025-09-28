@@ -7,7 +7,7 @@ return {
     config = function()
       vim.g.rustaceanvim = {
         server = {
-          cmd = { "/usr/bin/rust-analyzer" },  -- Explicit path
+          cmd = { "/home/majid/.rustup/toolchains/1.89-x86_64-unknown-linux-gnu/bin/rust-analyzer" },  -- Explicit path
           on_attach = function(client, bufnr)
             -- Set your keymaps here if needed
             local opts = { buffer = bufnr }
@@ -21,6 +21,9 @@ return {
            capabilities = require('blink.cmp').get_lsp_capabilities(),
           default_settings = {
             ["rust-analyzer"] = {
+               files = {
+                excludeDirs = { "target", "node_modules" },
+               },
               check = {
                 command = "clippy",
               },

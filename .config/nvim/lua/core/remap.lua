@@ -19,6 +19,7 @@ nmap('<leader>ff',':Files<CR>')
 nmap('<leader>fg',':Rg<CR>')
 nmap('<leader>fb',':Buffers<CR>')
 nmap('<leader>gs',':Rg <C-R><C-W><CR>')
+vmap('<leader>gs',':<C-U>Rg "<C-R>\\""<CR>')
 
 
 -- go to next or previous error in errorFix list
