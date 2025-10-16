@@ -1,3 +1,5 @@
 [terminal.shell]
 program = "/usr/bin/tmux"
 
+[window]
+startup_mode = "Maximized"
