@@ -42,3 +42,4 @@ export FZF_DEFAULT_COMMAND="find -L"
 # make sure the --git-dir is the same as the
 # directory where you created the repo above.
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+set -gx PATH /home/majid/.local/share/solana/install/active_release/bin $PATH
