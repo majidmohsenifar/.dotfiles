@@ -1,8 +1,14 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },  -- Ensure textobjects are installed
-    event = "BufReadPre",  -- Lazy load when opening a file
+    dependencies = { {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        lazy = false,
+        branch = "master",
+    }},  -- Ensure textobjects are installed
+    lazy = false,
+    branch = "master",
+    -- event = "BufReadPre",  -- Lazy load when opening a file
     config = function()
       require("nvim-treesitter.configs").setup({
         ensure_installed = { 'go', 'lua', 'rust' },  -- Add languages here
